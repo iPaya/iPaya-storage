@@ -1,0 +1,29 @@
+{
+    "name": "ipaya/iPaya-storage",
+    "description": "The Storage system of iPaya.",
+    "type": "project",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.10",
+        "yiisoft/yii2-bootstrap": "*",
+        "vlucas/phpdotenv": "*",
+        "ipaya/yii2-fontawesome": "^1.0",
+        "ipaya/yii2-widget-script-block": "^0.2.1",
+        "ipaya/yii2-alert": "^1.0",
+        "ipaya/yii2-adminlte": "1.0.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-debug": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
