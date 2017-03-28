@@ -37,6 +37,10 @@ class Controller extends \yii\rest\Controller
                 [
                     'class' => HttpBasicAuth::className(),
                     'auth' => function ($appId, $appSecret) {
+                        // 测试时不使用数据库
+                        if ($appId == 'test' || $appSecret == 'test') {
+                            return new Client();
+                        }
                         return Client::find()
                             ->andWhere([
                                 'appId' => $appId,

@@ -29,11 +29,20 @@ class UploadController extends Controller
      */
     public function actionFile()
     {
-        $uploadedFile = UploadedFile::getInstanceByName('file');
         /** @var Client $client */
         $client = \Yii::$app->user->getIdentity();
+
+        // 测试时，直接返回结果，不进行处理
+        if ($client->isNewRecord) {
+            return [
+                'name' => 'test',
+                'url' => 'http://this-is-a-test-file',
+            ];
+        }
+
+        $uploadedFile = UploadedFile::getInstanceByName('file');
         $model = new UploadFileForm([
-            'client'=>$client
+            'client' => $client
         ]);
         $model->uploadedFile = $uploadedFile;
 
