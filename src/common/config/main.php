@@ -5,6 +5,9 @@
  * @license http://ipaya.cn/license
  */
 
+$db = require(__DIR__ . '/db.php');
+$frontendUrlManager = require(FRONTEND_PATH . '/config/url-manager.php');
+
 return [
     'language' => 'zh-CN',
     'timeZone' => 'Asia/Shanghai',
@@ -21,5 +24,11 @@ return [
             'timeFormat' => 'php:H:i:s',
             'nullDisplay' => '无'
         ],
+        'fileSystem'=>[
+            'class'=>'common\fileSystem\LocalFileSystem',
+            'path'=>'@root/apps/backend/runtime'
+        ],
+        'db' => $db,
+        'frontendUrlManager' => $frontendUrlManager,
     ],
 ];

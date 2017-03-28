@@ -13,7 +13,7 @@ use yii\web\View;
  */
 
 $rightNavItems = [
-    ['label' => 'iPaya', 'items' => [
+    ['label' => Yii::$app->user->getIdentity()->name, 'items' => [
         ['label' => '退出登录', 'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']]
     ]]
 ];

@@ -15,6 +15,19 @@ use yii\web\View;
 
 $sidebarItems = [
     '<li class="header">导航</li>',
+    [
+        'label'=>'文件',
+        'items'=>[
+            ['label'=>'文件列表','url'=>['/file/index']],
+        ]
+    ],
+    [
+        'label'=>'客户',
+        'items'=>[
+            ['label'=>'客户列表','url'=>['/client/index']],
+            ['label'=>'新增客户','url'=>['/client/create']],
+        ]
+    ],
 ];
 ?>
 <!-- Left side column. contains the logo and sidebar -->

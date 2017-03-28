@@ -2,7 +2,7 @@
 /**
  * @link http://ipaya.cn/
  * @copyright Copyright (c) 2016 ipaya.cn
- * @license http://ipaya.cn/license/
+ * @license http://ipaya.cn/license
  */
 
 namespace backend\components;
@@ -77,5 +77,19 @@ class Controller extends \yii\web\Controller
             $this->enableCsrfValidation = false;
         }
         return parent::beforeAction($action);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function render($view, $params = [])
+    {
+        if (\Yii::$app->request->isAjax) {
+            $render = 'renderAjax';
+        } else {
+            $render = 'render';
+        }
+
+        return parent::$render($view, $params);
     }
 }

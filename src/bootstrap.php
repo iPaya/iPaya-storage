@@ -16,5 +16,6 @@ defined('YII_ENV') or define('YII_ENV', getenv("APP_ENV") == '' ? 'dev' : getenv
 
 define('COMMON_PATH', APP_SRC_ROOT . '/common');
 define('BACKEND_PATH', APP_SRC_ROOT . '/backend');
+define('API_PATH', APP_SRC_ROOT . '/api');
 define('FRONTEND_PATH', APP_SRC_ROOT . '/frontend');
 define('CONSOLE_PATH', APP_SRC_ROOT . '/console');

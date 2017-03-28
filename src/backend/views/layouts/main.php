@@ -2,7 +2,7 @@
 /**
  * @link http://ipaya.cn/
  * @copyright Copyright (c) 2016 ipaya.cn
- * @license http://ipaya.cn/license/
+ * @license http://ipaya.cn/license
  */
 
 
@@ -45,7 +45,11 @@ $this->beginContent(__DIR__ . '/base.php');
 </div>
 <?php Modal::begin([
     'id' => 'modal-default',
-    'header' => '<h4 class="modal-title">操作</h4>'
+    'header' => '<h4 class="modal-title">操作</h4>',
+    'clientOptions' => [
+        'backdrop' => 'static',
+        'keyboard' => false,
+    ]
 ]) ?>
 <?php Modal::end() ?>
 <?php $this->endContent(); ?>

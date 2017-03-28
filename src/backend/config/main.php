@@ -18,7 +18,15 @@ $config = [
     'bootstrap' => ['log'],
     'basePath' => BACKEND_PATH,
     'controllerNamespace' => 'backend\controllers',
+    'runtimePath' => APP_ROOT . '/apps/backend/runtime',
     'components' => [
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+            ],
+        ],
         'user' => [
             'identityClass' => 'common\models\Manager',
             'loginUrl' => ['/site/login']

@@ -11,6 +11,7 @@ $params = ArrayHelper::merge(
     require(COMMON_PATH . '/config/params.php'),
     require(__DIR__ . '/params.php')
 );
+$urlManager = require(__DIR__.'/url-manager.php');
 
 $config = [
     'id' => 'ipaya-frontend',
@@ -18,19 +19,13 @@ $config = [
     'bootstrap' => ['log',],
     'basePath' => FRONTEND_PATH,
     'controllerNamespace' => 'frontend\controllers',
+    'runtimePath' => APP_ROOT . '/apps/frontend/runtime',
     'components' => [
         'user' => [
             'identityClass' => 'app\models\User',
             'loginUrl' => ['/login/index']
         ],
-        'urlManager' => [
-            'class' => 'yii\web\UrlManager',
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                // url rules
-            ],
-        ],
+        'urlManager' => $urlManager,
         'errorHandler' => [
             'errorAction' => '/site/error',
         ],
@@ -38,6 +33,9 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'qiErKNMYkFyPKj7a36VPxQqiueSmOVSt',
         ],
+        'response'=>[
+            'class'=>'yii\web\Response'
+        ]
     ],
     'params' => $params
 ];

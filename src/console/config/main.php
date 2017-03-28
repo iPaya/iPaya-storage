@@ -17,5 +17,16 @@ return [
     'name' => 'iPaya Console',
     'basePath' => CONSOLE_PATH,
     'controllerNamespace' => 'console\controllers',
+    'runtimePath' => APP_ROOT . '/apps/console/runtime',
+    'controllerMap' => [
+        'migrate' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'templateFile' => '@console/templates/migration.php',
+            'migrationNamespaces' => [
+                'console\migrations',
+            ],
+            'migrationPath' => null
+        ],
+    ],
     'params' => $params
 ];

@@ -8,11 +8,18 @@
 namespace frontend\controllers;
 
 
-use yii\web\Controller;
+use frontend\components\Controller;
 use yii\web\ErrorAction;
 
 class SiteController extends Controller
 {
+    public function accessRules()
+    {
+        return [
+            ['allow' => true, 'roles' => ['?', '@']]
+        ];
+    }
+
     public function actions()
     {
         return [
@@ -24,6 +31,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        return 'success';
     }
 }
