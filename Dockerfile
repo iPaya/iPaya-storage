@@ -34,7 +34,7 @@ RUN cd $CODE_PATH && \
   # Uncomment if you're in china.
   # composer config -g repo.packagist composer https://packagist.phpcomposer.com && \
   composer global require "fxp/composer-asset-plugin:~1.2.0" && \
-  composer install --prefer-dist --optimize-autoloader
+  composer install --prefer-dist --no-dev --no-suggest --optimize-autoloader
 
 
 RUN chmod +x $CODE_PATH/console && \
