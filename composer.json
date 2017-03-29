@@ -11,7 +11,8 @@
         "ipaya/yii2-fontawesome": "^1.0",
         "ipaya/yii2-widget-script-block": "^0.2.1",
         "ipaya/yii2-alert": "^1.0",
-        "ipaya/yii2-adminlte": "1.0.0"
+        "ipaya/yii2-adminlte": "1.0.0",
+        "aliyuncs/oss-sdk-php": "~2.0"
     },
     "require-dev": {
         "yiisoft/yii2-gii": "*",

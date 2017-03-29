@@ -24,9 +24,16 @@ return [
             'timeFormat' => 'php:H:i:s',
             'nullDisplay' => '无'
         ],
-        'fileSystem'=>[
-            'class'=>'common\fileSystem\LocalFileSystem',
-            'path'=>'@root/apps/backend/runtime'
+        'fileSystem' => [
+            'class' => 'common\fileSystem\OssFileSystem',
+            'path' => '@root/apps/backend/runtime'
+        ],
+        'oss' => [
+            'class' => 'common\oss\Client',
+            'endpoint' => getenv('ALIYUN_OSS_ENDPOINT'),
+            'accessKeyId' => getenv('ALIYUN_ACCESS_KEY_ID'),
+            'accessKeySecret' => getenv('ALIYUN_ACCESS_KEY_SECRET'),
+            'bucket' => getenv('ALIYUN_OSS_BUCKET')
         ],
         'db' => $db,
         'frontendUrlManager' => $frontendUrlManager,

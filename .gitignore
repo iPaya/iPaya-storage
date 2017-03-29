@@ -3,3 +3,6 @@
 
 # composer
 /vendor
+
+# env.local.ini
+env.local.ini
