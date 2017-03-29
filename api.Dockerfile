@@ -38,6 +38,12 @@ RUN cd $CODE_PATH && \
 
 RUN chmod +x $CODE_PATH/console && \
   ln -s $CODE_PATH/console /usr/local/bin/console && \
-  chmod +x /usr/local/bin/startup
+  chmod +x /usr/local/bin/startup && \
+  ln -s $CODE_PATH/apps/frontend/web /var/www/frontend && \
+  ln -s $CODE_PATH/apps/backend/web /var/www/backend && \
+  ln -s $CODE_PATH/apps/api/web /var/www/api
 
 CMD ["startup"]
+
+RUN rm -rf /var/www/html && ln -s /code/apps/api/web/ /var/www/html
+
