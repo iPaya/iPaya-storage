@@ -9,6 +9,11 @@ ENV MYSQL_USERNAME=root
 ENV MYSQL_PASSWORD=root
 ENV FRONTEND_BASE_URL='http://storage.dev.ipaya.cn'
 
+ENV ALIYUN_OSS_ENDPOINT=your-aliyun-oss-endpoint
+ENV ALIYUN_ACCESS_KEY_ID=your-aliyun-access-key-id
+ENV ALIYUN_ACCESS_KEY_SECRET=your-aliyun-access-key-secret
+ENV ALIYUN_OSS_BUCKET=your-aliyun-oss-bucket
+
 ENV CODE_PATH="/code"
 
 WORKDIR $CODE_PATH
@@ -38,10 +43,7 @@ RUN cd $CODE_PATH && \
 
 RUN chmod +x $CODE_PATH/console && \
   ln -s $CODE_PATH/console /usr/local/bin/console && \
-  chmod +x /usr/local/bin/startup && \
-  ln -s $CODE_PATH/apps/frontend/web /var/www/frontend && \
-  ln -s $CODE_PATH/apps/backend/web /var/www/backend && \
-  ln -s $CODE_PATH/apps/api/web /var/www/api
+  chmod +x /usr/local/bin/startup
 
 CMD ["startup"]
 

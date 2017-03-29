@@ -9,6 +9,11 @@ ENV MYSQL_USERNAME=root
 ENV MYSQL_PASSWORD=root
 ENV FRONTEND_BASE_URL='http://storage.dev.ipaya.cn'
 
+ENV ALIYUN_OSS_ENDPOINT=your-aliyun-oss-endpoint
+ENV ALIYUN_ACCESS_KEY_ID=your-aliyun-access-key-id
+ENV ALIYUN_ACCESS_KEY_SECRET=your-aliyun-access-key-secret
+ENV ALIYUN_OSS_BUCKET=your-aliyun-oss-bucket
+
 ENV CODE_PATH="/code"
 
 WORKDIR $CODE_PATH
